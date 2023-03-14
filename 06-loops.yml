@@ -1,0 +1,19 @@
+- name: Loops Demo
+  hosts: localhost
+  tasks:
+    - name: Print Fruit Name
+      debug:
+        msg: Fruit Name - {{ item }}
+      loop:
+        - Apple
+        - Banana
+        - Orange
+
+    - name: Print Fruit Name with Quantity
+      debug:
+        msg: Fruit Name - {{ item.name }} , Quantity - {{ item.quantity }}
+      loop:
+        - { name: "Apple", quantity: 10 }
+        - { name: "Banana", quantity: 20 }
+        - { name: "Orange", quantity: 30 }
+# for i in Apple Bana ; do echo $i
